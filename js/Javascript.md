@@ -1,22 +1,22 @@
 # Learning Javascript
+
 **Refrences:** \
 [https://www.thatjsdude.com](https://www.thatjsdude.com/interview/js1.html)\
 [https://www..com](https://www..com)
 
 ## Knowledge
-- [](#1-)
-- [Var vs Let vs Const](#2-var-vs-let-vs-const)
-- [Promisses](#3-promisses)
-- [Regular funtions vs arrow funtions](#4-regular-funtions-vs-arrow-funtions)
-- [DOM update mechanism](#5-dom-update-mechanism)
-- [Deep copy methods](#6-deep-copy-methods)
-- [Spread operator vs Rest operator and use cases](#7-spread-operator-vs-rest-operator-and-use-cases)
+
+- [Var vs Let vs Const](var-vs-let-vs-const.md)
+- [Promisses](promises.md)
+- [Regular functions vs arrow functions](regular-vs-arrow-functions.md)
+- [DOM update mechanism](dom-vs-virtual-dom.md)
+- [Deep copy vs shallow copy](deep-copy-vs-shallow-copy.md)
+- [Spread operator vs Rest operator and use cases](spread-operator-vs-rest-operator.md)
 - [Refrence copy vs value copy](#8-refrence-copy-vs-value-copy)
 - [Proxy and Reflect](#9-proxy-and-reflect)
 - [Prototype](#10-prototype)
-
-
 ## Challenges
+
 - [First non repeating char](#1-first-non-repeating-char)
 - [Remove duplicate char](#2-remove-duplicate-char)
 - [Find Missing Number](#3-find-missing-number)
@@ -24,40 +24,98 @@
 
 ## Knowledge
 
-> ### 1. 
-> description
 
-> ### 2. Var vs Let vs Const
-> description
 
-> ### 3. Promisses
-> description
+---
 
-> ### 4. Regular funtions vs arrow funtions
-> description
+---
 
-> ### 5. DOM update mechanism
-> description
 
->### 6. Deep copy methods
-> description
+---
 
->### 7. Spread operator vs Rest operator and use cases
-> description
+### 8. Reference Copy vs Value Copy
 
->### 8. Refrence copy vs value copy
-> description
+Primitive types are copied by value, while objects are copied by reference.
 
->### 9. Proxy and Reflect
-> description
+```js
+// Value copy (primitives)
+let a = 5;
+let b = a;
+b = 10;
+console.log(a); // 5
+console.log(b); // 10
 
->### 10. Prototype
-> description
+// Reference copy (objects)
+let obj1 = { name: "John" };
+let obj2 = obj1;
+obj2.name = "Jane";
+console.log(obj1.name); // 'Jane'
+console.log(obj2.name); // 'Jane'
+```
+
+---
+
+### 9. Proxy and Reflect
+
+Proxy allows custom behavior for fundamental operations. Reflect provides methods for interceptable JavaScript operations.
+
+```js
+const handler = {
+  get: function (target, prop) {
+    return prop in target ? target[prop] : "Property not found";
+  },
+  set: function (target, prop, value) {
+    if (prop === "age" && value < 0) {
+      throw new Error("Age cannot be negative");
+    }
+    target[prop] = value;
+    return true;
+  },
+};
+
+const person = new Proxy({}, handler);
+person.name = "John";
+console.log(person.name); // 'John'
+console.log(person.age); // 'Property not found'
+```
+
+---
+
+### 10. Prototype
+
+Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+
+```js
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.speak = function () {
+  console.log(`${this.name} makes a sound.`);
+};
+
+function Dog(name) {
+  Animal.call(this, name);
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function () {
+  console.log("Woof!");
+};
+
+const dog = new Dog("Rex");
+dog.speak(); // "Rex makes a sound."
+dog.bark(); // "Woof!"
+```
 
 ## Challenges
 
 ### 1. First Non Repeating Char
+
 [Description](descriptions.md)
+
 ```js
 function firstNonRepeatChar(str) {
   var len = str.length,
@@ -79,9 +137,10 @@ function firstNonRepeatChar(str) {
  = "f"
 ```
 
-
 ## 2. Remove Duplicate Char
+
 [Description](descriptions.md)
+
 ```js
 function removeDuplicateChar(str){
   var len = str.length,
@@ -109,7 +168,9 @@ function removeDuplicateChar(str){
 ```
 
 ## 3. Find Missing Number
+
 [Description](descriptions.md)
+
 ```js
 function findMissingNumber(nums) {
     const n = nums.length;
@@ -124,9 +185,10 @@ function findMissingNumber(nums) {
   = 8
 ```
 
+## 4. Find Indices of Two Numbers that Sum to Target
 
-## 4. Find Indices of Two Numbers that Sum to Target 
 [Description](descriptions.md)
+
 ```js
 function twoSum(nums, target) {
     const map = new Map();
@@ -146,7 +208,3 @@ function twoSum(nums, target) {
   = [1, 2]
 
 ```
-
-
-
-
