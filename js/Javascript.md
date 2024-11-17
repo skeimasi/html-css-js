@@ -10,7 +10,7 @@
 - [Regular funtions vs arrow funtions](#4-regular-funtions-vs-arrow-funtions)
 - [DOM update mechanism](#5-dom-update-mechanism)
 - [Deep copy methods](#6-deep-copy-methods)
-- [Spread operator vs Rest operator + use cases](#7-spread-operator-vs-rest-operator-use-cases)
+- [Spread operator vs Rest operator and use cases](#7-spread-operator-vs-rest-operator-and-use-cases)
 - [Refrence copy vs value copy](#8-refrence-copy-vs-value-copy)
 - [Proxy and Reflect](#9-proxy-and-reflect)
 - [Prototype](#10-prototype)
@@ -42,7 +42,7 @@
 >### 6. Deep copy methods
 > description
 
->### 7. Spread operator vs Rest operator + use cases
+>### 7. Spread operator vs Rest operator and use cases
 > description
 
 >### 8. Refrence copy vs value copy
