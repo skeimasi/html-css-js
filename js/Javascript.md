@@ -6,14 +6,14 @@
 ## Knowledge
 - [](#1-)
 - [Var vs Let vs Const](#2-var-vs-let-vs-const)
-- [Promisses](#5-promisses)
-- [Regular funtions vs arrow funtions](#6-regular-funtions-vs-arrow-funtions)
-- [DOM update mechanism](#8-dom-update-mechanism)
-- [Deep copy methods](#9-deep-copy-methods)
-- [Spread operator vs Rest operator + use cases](#10-spread-operator-vs-rest-operator-use-cases)
-- [Refrence copy vs value copy](#11-refrence-copy-vs-value-copy)
-- [Proxy and Reflect](#12-proxy-and-reflect)
-- [Prototype](#13-prototype)
+- [Promisses](#3-promisses)
+- [Regular funtions vs arrow funtions](#4-regular-funtions-vs-arrow-funtions)
+- [DOM update mechanism](#5-dom-update-mechanism)
+- [Deep copy methods](#6-deep-copy-methods)
+- [Spread operator vs Rest operator + use cases](#7-spread-operator-vs-rest-operator-use-cases)
+- [Refrence copy vs value copy](#8-refrence-copy-vs-value-copy)
+- [Proxy and Reflect](#9-proxy-and-reflect)
+- [Prototype](#10-prototype)
 
 
 ## Challenges
